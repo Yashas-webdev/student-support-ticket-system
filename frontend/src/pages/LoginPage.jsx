@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser, clearError } from '../store/authSlice';
-import { LifeBuoy, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { GraduationCap, ArrowRight, UserCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function LoginPage() {
@@ -39,12 +39,12 @@ export default function LoginPage() {
 
       <div className="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl relative z-10 border border-slate-100">
         <div className="text-center mb-8">
-          <div className="inline-flex p-3 bg-gradient-to-tr from-indigo-600 to-violet-600 rounded-2xl text-white shadow-lg mb-3">
-            <LifeBuoy className="w-8 h-8" />
+          <div className="inline-flex p-3.5 bg-slate-900 rounded-2xl text-white shadow-md mb-3">
+            <GraduationCap className="w-8 h-8 text-indigo-400" />
           </div>
           <h1 className="text-2xl font-black text-slate-900 tracking-tight">UniSupport Pro</h1>
           <p className="text-xs text-slate-500 font-medium mt-1">
-            Student Ticket & SLA Management Platform
+            Student Support & SLA Management Platform
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
           >
             <span>{loading ? 'Signing in...' : 'Sign In'}</span>
             <ArrowRight className="w-4 h-4" />
@@ -95,9 +95,9 @@ export default function LoginPage() {
 
         {/* Quick Demo Login Buttons */}
         <div className="mt-8 pt-6 border-t border-slate-200">
-          <div className="flex items-center space-x-1.5 text-xs font-bold text-slate-600 mb-3">
-            <Zap className="w-4 h-4 text-amber-500 animate-bounce" />
-            <span>1-Click Demo Accounts (Seeded)</span>
+          <div className="flex items-center space-x-1.5 text-xs font-bold text-slate-700 mb-3">
+            <UserCheck className="w-4 h-4 text-indigo-600" />
+            <span>Quick Demo Accounts (Seeded)</span>
           </div>
 
           <div className="grid grid-cols-1 gap-2">

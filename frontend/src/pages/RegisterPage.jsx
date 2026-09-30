@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser, clearError } from '../store/authSlice';
-import { LifeBuoy, ArrowRight } from 'lucide-react';
+import { GraduationCap, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function RegisterPage() {
@@ -37,8 +37,8 @@ export default function RegisterPage() {
     <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 relative overflow-hidden">
       <div className="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl relative z-10 border border-slate-100">
         <div className="text-center mb-6">
-          <div className="inline-flex p-3 bg-gradient-to-tr from-indigo-600 to-violet-600 rounded-2xl text-white shadow-lg mb-2">
-            <LifeBuoy className="w-8 h-8" />
+          <div className="inline-flex p-3.5 bg-slate-900 rounded-2xl text-white shadow-md mb-2">
+            <GraduationCap className="w-8 h-8 text-indigo-400" />
           </div>
           <h1 className="text-2xl font-black text-slate-900">Create Account</h1>
           <p className="text-xs text-slate-500 font-medium">Join UniSupport Pro Portal</p>
@@ -127,7 +127,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center space-x-2"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center space-x-2"
           >
             <span>{loading ? 'Creating...' : 'Register'}</span>
             <ArrowRight className="w-4 h-4" />

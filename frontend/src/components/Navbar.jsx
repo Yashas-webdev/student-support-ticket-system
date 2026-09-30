@@ -1,22 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from '../store/authSlice';
 import { triggerSlaCheck } from '../store/ticketSlice';
 import {
-  LifeBuoy,
+  GraduationCap,
   LogOut,
-  Bell,
-  Zap,
-  UserCheck,
-  ShieldAlert,
+  RefreshCw,
   BarChart3,
   Ticket,
+  ShieldCheck,
 } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab }) {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
-  const [showNotifications, setShowNotifications] = useState(false);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -45,15 +42,18 @@ export default function Navbar({ activeTab, setActiveTab }) {
         <div className="flex items-center justify-between h-16">
           {/* Logo & Title */}
           <div className="flex items-center space-x-3">
-            <div className="bg-gradient-to-tr from-indigo-600 to-violet-600 p-2.5 rounded-xl text-white shadow-md">
-              <LifeBuoy className="w-6 h-6 animate-spin-slow" />
+            <div className="bg-slate-900 p-2.5 rounded-xl text-white shadow-sm flex items-center justify-center">
+              <GraduationCap className="w-5 h-5 text-indigo-400" />
             </div>
             <div>
-              <h1 className="text-lg font-bold text-slate-900 tracking-tight leading-tight">
-                UniSupport Pro
+              <h1 className="text-lg font-bold text-slate-900 tracking-tight leading-tight flex items-center gap-1.5">
+                <span>UniSupport Pro</span>
+                <span className="text-[10px] bg-indigo-50 text-indigo-700 font-extrabold px-1.5 py-0.5 rounded border border-indigo-200">
+                  Enterprise
+                </span>
               </h1>
               <p className="text-xs text-slate-500 font-medium">
-                Student Ticket & SLA Management
+                Student Support & SLA Audit Desk
               </p>
             </div>
           </div>
@@ -92,15 +92,15 @@ export default function Navbar({ activeTab, setActiveTab }) {
           {/* Right Actions */}
           {user && (
             <div className="flex items-center space-x-3">
-              {/* Force SLA Check Button (Great for Live Demos!) */}
+              {/* SLA Re-evaluation Button */}
               {(user.role === 'MANAGER' || user.role === 'ADMIN' || user.role === 'STAFF') && (
                 <button
                   onClick={handleRunSlaCheck}
                   title="Force re-evaluate SLA deadlines & trigger auto-escalations"
-                  className="flex items-center space-x-1.5 bg-rose-50 text-rose-700 hover:bg-rose-100 border border-rose-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all"
+                  className="flex items-center space-x-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all"
                 >
-                  <Zap className="w-3.5 h-3.5 text-rose-600 animate-pulse" />
-                  <span className="hidden sm:inline">Run SLA Check</span>
+                  <RefreshCw className="w-3.5 h-3.5 text-slate-600" />
+                  <span className="hidden sm:inline">Run SLA Audit</span>
                 </button>
               )}
 
@@ -117,7 +117,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
                   </span>
                 </div>
 
-                <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-xs border-2 border-white">
+                <div className="w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-white font-bold text-sm shadow-xs border-2 border-white">
                   {user.name.charAt(0)}
                 </div>
 

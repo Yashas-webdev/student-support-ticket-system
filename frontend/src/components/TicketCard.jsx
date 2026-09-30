@@ -2,12 +2,9 @@ import React from 'react';
 import SlaBadge from './SlaBadge';
 import {
   Tag,
-  AlertOctagon,
   User,
-  Calendar,
-  MessageSquare,
   ShieldAlert,
-  ArrowRight,
+  ChevronRight,
 } from 'lucide-react';
 
 export default function TicketCard({ ticket, onClick }) {
@@ -54,7 +51,7 @@ export default function TicketCard({ ticket, onClick }) {
       {ticket.isEscalated && (
         <div className="bg-rose-600 text-white text-[11px] font-bold px-3 py-1 flex items-center justify-between -mx-5 -mt-5 mb-3">
           <div className="flex items-center space-x-1.5">
-            <ShieldAlert className="w-3.5 h-3.5 animate-bounce" />
+            <ShieldAlert className="w-3.5 h-3.5" />
             <span>ESCALATED TO MANAGEMENT (SLA BREACHED)</span>
           </div>
           <span className="text-[10px] opacity-90">Level {ticket.escalationLevel || 1}</span>
@@ -122,7 +119,7 @@ export default function TicketCard({ ticket, onClick }) {
               Unassigned
             </span>
           )}
-          <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
+          <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
         </div>
       </div>
     </div>

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Clock, AlertTriangle, CheckCircle, ShieldAlert } from 'lucide-react';
+import React from 'react';
+import { Clock, AlertTriangle, CheckCircle2, ShieldAlert } from 'lucide-react';
 
 export default function SlaBadge({ sla, status }) {
   if (status === 'Resolved' || status === 'Closed') {
     return (
-      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-        <CheckCircle className="w-3.5 h-3.5" />
+      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
         SLA Met
       </span>
     );
@@ -13,7 +13,7 @@ export default function SlaBadge({ sla, status }) {
 
   if (sla?.isBreached || sla?.status === 'BREACHED') {
     return (
-      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300 animate-pulse">
+      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200">
         <ShieldAlert className="w-3.5 h-3.5 text-rose-600" />
         SLA BREACHED
       </span>
@@ -31,7 +31,7 @@ export default function SlaBadge({ sla, status }) {
       }`}
     >
       {isWarning ? (
-        <AlertTriangle className="w-3.5 h-3.5 text-amber-600 animate-bounce" />
+        <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
       ) : (
         <Clock className="w-3.5 h-3.5 text-indigo-500" />
       )}
